@@ -1,0 +1,24 @@
+.login {
+	position: fixed;
+	width: 40vw;
+	height: 40vh;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin: auto;
+	background-color: black;
+	font-color: #ffffff;
+	font-size:50px;
+}
+
+body, .list {
+	text-align: center;
+	font-size: 30px;
+	color: #ee7283;
+}
+
+body {
+	background-size: cover;
+	background-image: url("http://66.media.tumblr.com/4f0b60912934a9ffa5ef484fa28a7f08/tumblr_niot7rGAAx1s60oo7o1_400.gif");
+}

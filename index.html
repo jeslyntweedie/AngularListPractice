@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="loginList">
+<head>
+
+	<title>List</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body ng-controller="mainCtrl">
+
+<div class = "login" ng-hide="goAway" >
+	<form ng-submit="fakelogin(username, password)">
+	<input type = "text" ng-model="username" placeholder="Username"> 
+	<input type = "text" ng-model="password" placeholder="Password">
+	<input type="submit">
+	</form>
+</div>
+
+    <div ng-show= "goAway">
+    <button type="button" ng-click="sorter= '+' ">Ascending</button>
+    <button type="button" ng-click="sorter= '-' ">Descending</button>
+
+    <h3>Filter By: <input type ="text" ng-model="filterer"></h3>
+
+	<h1>
+	Welcome {{displayName}}!
+	</h1>
+
+	<div class= "list" ng-repeat="thing in listOfThings | orderBy: sorter | filter: filterer">
+		<h3 ng-hide="changer" ng-dblclick = "changer=true"> {{thing}}</h3>
+		<form ng-show="changer" ng-submit="changer=false">
+		<input type = "text" ng-model ="thing">
+		</form>
+	
+	</div>
+</div>
+
+<script src="./app.js"></script>
+<script src="./mainCtrl.js"></script>
+<script src="./mainServ.js"></script>
+</body>
+</html>
